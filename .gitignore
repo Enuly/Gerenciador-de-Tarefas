@@ -1,0 +1,14 @@
+# Node.js
+node_modules/
+.env
+dist/
+build/
+
+# Next.js
+.next/
+out/
+.cache/
+
+# Sistema
+.DS_Store
+Thumbs.db
