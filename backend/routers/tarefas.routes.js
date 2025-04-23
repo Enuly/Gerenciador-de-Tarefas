@@ -1,13 +1,14 @@
 const { Router } = require("express");
 const router = Router();
-const TarefaController = require("../controllers/tarefasController");
 const tarefasController = require("../controllers/tarefasController");
 
 
 //get post put delete
 router.get("/tarefa", (req, res) => {
-    const resposta = tarefasController.buscar();
-    res.send(resposta);
+    const listaTarefas = tarefasController.buscar();
+    listaTarefas
+    .then((tarefas) => res.status(200).json(tarefas))
+    .catch((error) => res.status(400).json(error.message));
 });
 
 router.post("/tarefas", (req, res) => {

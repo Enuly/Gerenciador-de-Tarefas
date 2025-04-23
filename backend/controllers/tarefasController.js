@@ -1,6 +1,7 @@
+const tarefasModel = require('../models/tarefasModel');
 class TarefaController {
     buscar() {
-        return "Buscando Tarefas...";
+        return tarefasModel.listar();
     }
     criar() {
         return "Criando Tarefas...";
