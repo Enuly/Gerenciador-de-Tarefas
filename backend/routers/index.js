@@ -1,4 +1,4 @@
-const tarefasRouter = require("./tarefas")
+const tarefasRouter = require("./tarefas.routes")
 module.exports = (app) => {
-    app.use("/tarefas", tarefasRouter);
+    app.use("/tarefas.routes", tarefasRouter);
 }

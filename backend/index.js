@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const tarefasRouter = require("./routers/tarefas");
+const tarefasRouter = require("./routers/tarefas.routes");
 const db = require("./config/db")
 const tabelas = require("./config/tabelas")
 
