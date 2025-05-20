@@ -30,8 +30,8 @@ class TarefaModel {
         });
     }
 
-        atualizar(tarefaAtualizada, id) {
-        const sql = "UPDATE tarefas SET? Where id = ?";
+    atualizar(tarefaAtualizada, id) {
+        const sql = "UPDATE tarefas SET ? WHERE id = ?";
         return new Promise((resolve, reject) => {
              db.query(sql, [tarefaAtualizada, id], (error, resposta) => {
             if (error) {
@@ -45,8 +45,8 @@ class TarefaModel {
         });
     }
 
-        deletar(id) {
-        const sql = "DELETE FROM atendimentos WHERE id = ?";
+    deletar(id) {
+        const sql = "DELETE FROM tarefas WHERE id = ?";
         return new Promise((resolve, reject) => {
              db.query(sql, id, (error, resposta) => {
             if (error) {
