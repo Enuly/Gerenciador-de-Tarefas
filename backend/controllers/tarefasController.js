@@ -6,11 +6,11 @@ class TarefaController {
     criar(novaTarefa) {
         return tarefasModel.criar(novaTarefa);
     }
-    atualizar(id) {
-        return "Atualizando Tarefa número "+ id + "...";
+    atualizar(tarefaAtualizada, id) {
+        return tarefasModel.atualizar(tarefaAtualizada, id);
     }
     deletar(id) {
-        return "Deletando Tarefa número "+ id + "...";
+        return tarefasModel.deletar(id);
     }
 }
 

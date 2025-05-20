@@ -13,20 +13,29 @@ router.post("/tarefas", (req, res) => {
     const novaTarefa = req.body;
     const tarefa = tarefasController.criar(novaTarefa);
     tarefa
-    .then(tarefaCriada => res.status(201).json(tarefaCriada)
-    .catch(error => res.status(400).json.message));
+    .then((tarefaCriada) => res.status(201).json(tarefaCriada))
+    .catch((error) => res.status(400).json(error.message));
 });
 
 router.put("/tarefas/:id", (req, res) => {
     const { id } = req.params;
-    const resposta = tarefasController.atualizar(id);
-    res.send(resposta);
+    const tarefaAtualizada = req.body;
+    const tarefa = tarefasController.atualizar(tarefaAtualizada,id);
+    tarefa
+    .then((resultarefaAtualizada) => 
+        res.status(200).json(resultarefaAtualizada)
+    )
+    .catch((error ) => res.json(400).json(error.message));
 });
 
 router.delete("/tarefas/:id", (req, res) => {
-    const  { id } = req.params;
-    const resposta = tarefasController.deletar(id);
-    res.send(resposta);
+    const  { id } = req.params; 
+    const tarefa = tarefasController.deletar(id);
+    tarefa
+    .then((resultarefaDeletada) => 
+        res.status(200).json(resultarefaDeletada)
+    )
+    .catch((error ) => res.json(400).json(error.message));
 });
 
 module.exports = router;

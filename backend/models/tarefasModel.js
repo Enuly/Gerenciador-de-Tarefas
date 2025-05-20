@@ -29,6 +29,36 @@ class TarefaModel {
         })
         });
     }
+
+        atualizar(tarefaAtualizada, id) {
+        const sql = "UPDATE tarefas SET? Where id = ?";
+        return new Promise((resolve, reject) => {
+             db.query(sql, [tarefaAtualizada, id], (error, resposta) => {
+            if (error) {
+                console.log("Erro ao listar...");
+                reject(error);
+                return;
+            }
+            console.log("Show");
+            resolve(resposta);
+        })
+        });
+    }
+
+        deletar(id) {
+        const sql = "DELETE FROM atendimentos WHERE id = ?";
+        return new Promise((resolve, reject) => {
+             db.query(sql, id, (error, resposta) => {
+            if (error) {
+                console.log("Erro ao listar...");
+                reject(error);
+                return;
+            }
+            console.log("Show");
+            resolve(resposta);
+        })
+        });
+    }
 }
 
 module.exports = new TarefaModel
