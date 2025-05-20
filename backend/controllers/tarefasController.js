@@ -3,8 +3,8 @@ class TarefaController {
     buscar() {
         return tarefasModel.listar();
     }
-    criar() {
-        return "Criando Tarefas...";
+    criar(novaTarefa) {
+        return tarefasModel.criar(novaTarefa);
     }
     atualizar(id) {
         return "Atualizando Tarefa número "+ id + "...";
